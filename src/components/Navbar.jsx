@@ -7,17 +7,17 @@ export default class Navbar extends Component {
         return (
             <nav className={styles.navbar}>
                 <ul className={styles.links}>
-                    <a href="#women">
+                    <a href="/all">
                         <li className={styles.link} >
-                            women
+                            all
                         </li>
                     </a>
-                    <a href="#men">
+                    <a href="/tech">
                         <li className={styles.link} >
-                            men
+                            tech
                         </li>
                     </a>
-                    <a href="#kids">
+                    <a href="/clothes">
                         <li className={styles.link} >
                             kids
                         </li>
