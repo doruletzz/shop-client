@@ -1,0 +1,37 @@
+@use '../styles/theme';
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    padding: 1rem 1rem;
+
+
+    .img {
+        width: 21rem;
+        height: 21rem;
+        object-fit: cover;
+    }
+
+    .title {
+        font-size: 1.25rem;
+        font-weight: 300;
+
+        color: theme.$primary-color;
+    }
+
+    .price {
+        font-size: 1rem;
+        font-weight: 500;
+
+        color: theme.$primary-color;
+    }
+
+
+    &:hover {
+        box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+
+
+    }
+}

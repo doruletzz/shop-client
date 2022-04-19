@@ -1,39 +1,60 @@
+@use '../styles/theme';
+
 * {
+
     box-sizing: border-box;
     padding: 0;
-    font-size: 18px;
+    font-size: 1.125rem;
+    text-decoration: none;
+}
+
+.wrapper{
+    margin:0;
+    position: fixed;  
+    top: 0;
+    padding: 0rem 6rem;
+    height: 3.5rem;
+    width: 99%;
+    background-color: white;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    padding: 20px 50px;
     justify-content: flex-center;
 
     .brand{
-        flex: 6;
+        color: theme.$highlight-color;
+        font-weight: 600;
+        flex: 4;
         text-align: center;
     }
     
     .links{
         display: inline-block;
-        flex: 3;
-        background-color: red;
+        flex: 4;
         flex-direction:column;
+        
 
         .link{
             display: inline-block;
             list-style: none;
             text-align: center;
-            margin-right: 4rem;
+            margin-right: 2rem;
+
+            color: theme.$primary-color;
+            padding: 0.5rem 0.25rem;
+
+            &:hover{
+                color: theme.$highlight-color;
+                box-shadow: 0px 2px 0px rgb(7, 236, 106);
+            }
         }
-        // flex-grow: 4;
     }
 
     
     .cart{
-        flex: 3;
-        background-color: green;
+        flex: 4;
         text-align: right;
         // flex-grow: 4;
     }

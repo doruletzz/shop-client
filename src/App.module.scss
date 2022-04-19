@@ -1,0 +1,10 @@
+@use './styles/theme';
+
+* {
+    font-family: theme.$primary-font-family;
+}
+
+.container{
+    
+    padding: 4.5rem 6rem
+}

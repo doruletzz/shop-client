@@ -1,19 +1,19 @@
 import React, { PureComponent } from 'react'
 
-export class Product extends PureComponent {
+import styles from './Product.module.scss';
 
+
+export class Product extends PureComponent {
 
     componentDidMount() {
         this.props.fetchProductDetails(this.props.id);
     }
 
     render() {
-
         return (
             <div>
-                <h1>{this.props.product.name}</h1>
-                <h6>{this.props.product.brand}</h6>
-                <div dangerouslySetInnerHTML={{ __html: this.props.product.description }} />
+                <h1 className={styles.title}>{this.props.product.name}</h1>
+                <h6 className={styles.subtitle}>{this.props.product.brand}</h6>
                 {this.props.product.attributes && this.props.product.attributes.map(attribute => (
                     <>
                         <h1>{attribute.name}: </h1>
@@ -31,6 +31,7 @@ export class Product extends PureComponent {
                 )}
                 <p>PRICE: {this.props.product.prices && this.props.product.prices[0].currency.symbol}{this.props.product.prices && this.props.product.prices[0].amount}</p>
                 <button>add to cart</button>
+                <div dangerouslySetInnerHTML={{ __html: this.props.product.description }} />
                 {this.props.product.gallery && this.props.product.gallery.map(imgSrc => <img src={imgSrc} alt={imgSrc} width="200" />)}
             </div>
         )
