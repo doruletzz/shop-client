@@ -13,7 +13,7 @@
     position: fixed;  
     top: 0;
     padding: 0rem 6rem;
-    height: 3.5rem;
+    height: 5rem;
     width: 99%;
     background-color: white;
 }
@@ -28,22 +28,24 @@
         font-weight: 600;
         flex: 4;
         text-align: center;
+        font-family: theme.$primary-font-family;
     }
     
     .links{
         display: inline-block;
         flex: 4;
         flex-direction:column;
+        font-family: theme.$primary-font-family;
         
 
         .link{
             display: inline-block;
             list-style: none;
             text-align: center;
-            margin-right: 2rem;
+            margin-right: 1.5rem;
 
             color: theme.$primary-color;
-            padding: 0.5rem 0.25rem;
+            padding: 1.25rem 0.25rem;
 
             &:hover{
                 color: theme.$highlight-color;
@@ -56,6 +58,7 @@
     .cart{
         flex: 4;
         text-align: right;
+        font-family: theme.$primary-font-family;
         // flex-grow: 4;
     }
 }
