@@ -9,6 +9,14 @@
     display: block;
 }
 
+.default{
+    background-color: red;
+}
+
+.selected{
+    background-color: blue;
+}
+
 
 .right{
     flex-basis: 33%;

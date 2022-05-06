@@ -7,22 +7,16 @@ import styles from './CategoryList.module.scss';
 
 export default class CategoryList extends PureComponent {
 
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.fetchProducts(this.props.category);
-
-        console.log(this.props.products)
-
     }
 
     render() {
 
         return (
             <>
-                <h1 className={styles.heading}>{this.props.category}</h1>
+                <h1 className={styles.heading}>{this.props.category.toUpperCase()}</h1>
                 <div className={styles.container}>
                     {this.props.products.map((product, idx) => (
                         <div key={idx} className={styles.item} >
