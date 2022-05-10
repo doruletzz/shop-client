@@ -10,7 +10,8 @@ import { products } from '../redux/products/reducer';
 const mapStateToProps = (state , ownProps) => {
 
     const { category } = ownProps;
-    const { products: { isFetching, items } } = state;
+    console.log(state);
+    const { products: { isFetching, items } } = state.productsReducer;
 
     return {
       isLoading: isFetching,

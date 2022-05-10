@@ -23,7 +23,7 @@ export class Gallery extends PureComponent {
             <div className={styles.container}>
                 <div className={styles.side}>
                     {this.props.gallery.map((imgSrc, idx) => (
-                        <div id={idx} className={idx === this.state.highlightedIdx ? styles.grayed : ""}>
+                        <div key={idx} id={idx} className={idx === this.state.highlightedIdx ? styles.grayed : ""}>
                             <img
                                 className={styles.image}
                                 src={imgSrc}

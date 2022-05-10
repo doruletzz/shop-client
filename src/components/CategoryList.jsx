@@ -7,9 +7,14 @@ import styles from './CategoryList.module.scss';
 
 export default class CategoryList extends PureComponent {
 
-
     componentDidMount() {
         this.props.fetchProducts(this.props.category);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.category !== prevProps.category) {
+            this.props.fetchProducts(this.props.category);
+        }
     }
 
     render() {

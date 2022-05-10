@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 import styles from './Navbar.module.scss';
 
@@ -9,24 +10,27 @@ export default class Navbar extends Component {
 
                 <nav className={styles.navbar}>
                     <ul className={styles.links}>
-                        <a href="/all">
+                        <Link to="/all">
                             <li className={styles.link} >
                                 ALL
                             </li>
-                        </a>
-                        <a href="/tech">
+                        </Link>
+                        <Link to="/tech">
                             <li className={styles.link} >
                                 TECH
                             </li>
-                        </a>
-                        <a href="/clothes">
+                        </Link>
+                        <Link to="/clothes">
                             <li className={styles.link} >
                                 CLOTHES
                             </li>
-                        </a>
+                        </Link>
                     </ul>
                     <div className={styles.brand}>logo</div>
-                    <div className={styles.cart}>cart</div>
+                    <div className={styles.cart}>
+                        <Link to="/cart"> cart
+                        </Link>
+                    </div>
                 </nav>
             </div>
         )
