@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import DropdownCurrency from './DropdownCurrency';
+import DropdownCurrencyWrapper from './DropdownCurrencyWrapper';
 
 import styles from './Navbar.module.scss';
 
 export default class Navbar extends Component {
+
+
     render() {
         return (
             <div className={styles.wrapper}>
@@ -27,8 +31,9 @@ export default class Navbar extends Component {
                         </Link>
                     </ul>
                     <div className={styles.brand}>logo</div>
-                    <div className={styles.cart}>
-                        <Link to="/cart"> cart
+                    <div className={styles.rhs}>
+                        <DropdownCurrencyWrapper />
+                        <Link to="/cart"> 🛒
                         </Link>
                     </div>
                 </nav>

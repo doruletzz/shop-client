@@ -9,8 +9,10 @@ import Cart from './Cart';
 
 const mapStateToProps = (state, ownProps) => {
     const { cart : {items, quantity}} = state.cartReducer;
+    const { currency : {index} } = state.currencyReducer;
 
     return {
+        index: index,
         items: items,
         quantity: quantity,
     };

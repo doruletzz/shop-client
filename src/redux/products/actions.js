@@ -1,7 +1,5 @@
 import { Query, Field, client } from '@tilework/opus';
-
-
-const serverURL = "http://localhost:4000";
+import { SERVER_URL } from '../../utils/constants'
 
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS";
 export const FETCH_PRODUCTS = "FETCH_PRODUCTS";
@@ -26,7 +24,7 @@ const getProduct = async (productId) => {
         )
 
 
-    client.setEndpoint(serverURL);
+    client.setEndpoint(SERVER_URL);
 
     let result = await client.post(getByIdQuery);
 
@@ -48,7 +46,7 @@ const receiveProducts = async (category) => {
             )
         );
 
-    client.setEndpoint(serverURL);
+    client.setEndpoint(SERVER_URL);
 
     let result = await client.post(getAllProductsQuery);
 

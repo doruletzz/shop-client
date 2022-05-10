@@ -1,0 +1,42 @@
+.currency {
+
+    display: inline-block;
+
+
+    .drop_button {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+
+
+    .drop_content {
+        display: none;
+    }
+
+    &:hover .drop_content {
+        position: absolute;
+        display: block;
+
+        button {
+            background: none;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+
+            display: block;
+        }
+
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+    }
+
+
+}
