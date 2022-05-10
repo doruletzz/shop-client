@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     const { currency : {index} } = state.currencyReducer;
 
     return {
-        index: index,
+        currencyIndex: index,
         items: items,
         quantity: quantity,
     };

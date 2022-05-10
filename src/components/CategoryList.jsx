@@ -30,8 +30,8 @@ export default class CategoryList extends PureComponent {
                                     imgUrl={product.gallery[0]}
                                     name={product.name}
                                     inStock={product.inStock}
-                                    symbol={product.prices[0].currency.symbol}
-                                    amount={product.prices[0].amount}
+                                    symbol={product.prices[this.props.currencyIndex].currency.symbol}
+                                    amount={product.prices[this.props.currencyIndex].amount}
                                 />
                             </Link>
                             {/* <img src={product.gallery[0]} width="200px" />

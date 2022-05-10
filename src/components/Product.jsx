@@ -94,7 +94,7 @@ export class Product extends PureComponent {
                     <p className={styles.price}>PRICE:
                     </p>
                     <p className={styles.price_value}>
-                        {this.props.product.prices && this.props.product.prices[0].currency.symbol}{this.props.product.prices && this.props.product.prices[0].amount}
+                        {this.props.product.prices && this.props.product.prices[this.props.currencyIndex].currency.symbol}{this.props.product.prices && this.props.product.prices[this.props.currencyIndex].amount}
                     </p>
                     <button onClick={() => this.addToCart()} className={styles.button}>ADD TO CART</button>
                     <div className={styles.description} dangerouslySetInnerHTML={{ __html: this.props.product.description }} />

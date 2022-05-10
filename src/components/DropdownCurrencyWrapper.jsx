@@ -10,7 +10,7 @@ import DropdownCurrency from './DropdownCurrency';
 
 
 const mapStateToProps = (state, ownProps) => {
-    const { currency : {index, currencies} } = state.currencyReducer;
+    const { currency: { index, currencies } } = state.currencyReducer;
 
     console.log(currencies);
 
