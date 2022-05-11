@@ -4,7 +4,7 @@ import styles from './DropdownCurrency.module.scss';
 
 export class DropdownCurrency extends PureComponent {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchCurrencies();
         console.log(this.props.currencies)
     }
@@ -13,7 +13,10 @@ export class DropdownCurrency extends PureComponent {
     render() {
         return (
             <div className={styles.currency}>
-                <button className={styles.drop_button}>💲</button>
+                <button className={styles.drop_button}>
+                    {this.props.currencies[this.props.index] && this.props.currencies[this.props.index].symbol}
+
+                </button>
                 <div className={styles.drop_content}>
                     {this.props.currencies && this.props.currencies.map((currency, idx) => (
                         <button key={idx} onClick={() => this.props.updateCurrencyIndex(idx)}>{currency.symbol} {currency.label}</button>

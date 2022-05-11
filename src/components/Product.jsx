@@ -22,8 +22,16 @@ export class Product extends PureComponent {
     setAttribute(attributeId, itemId) {
 
         //TODO change to setState
-        this.state.attributes[attributeId] = itemId;
+        // this.state.attributes[attributeId] = itemId;
+
+        this.setState(prevState => {
+            let attributes = { ...prevState.attributes }
+            attributes[attributeId] = itemId;
+            return { attributes };
+        })
         // console.log(this.state.attributes);
+
+        console.log(this.state.attributes[attributeId])
     }
 
     addToCart() {
@@ -49,7 +57,6 @@ export class Product extends PureComponent {
 
     render() {
 
-
         return (
             <div className={styles.container}>
                 <div className={styles.left}>
@@ -66,19 +73,21 @@ export class Product extends PureComponent {
                         <div className={styles.attribute} key={attribute.id}>
                             <h1>{attribute.name.toUpperCase()}: </h1>
                             {attribute.type === "swatch" ?
-                                attribute.items.map(item => (
+                                attribute.items.map( (item, idx) => ( 
                                     <button key={item.id}
-                                        style={{ backgroundColor: this.state.attributes[attribute.id] && "red", color: "indigo" }}
+                                        className={styles.selected}
+                                        style={{ backgroundColor: item.value}}
                                         onClick={() => this.setAttribute(attribute.id, item.id)}>
                                         {item.displayValue}
                                     </button>
                                 ))
                                 :
-                                attribute.items.map(item => (
-                                    this.state.attributes[attribute.id] !== "512GB" && <Button
+                                attribute.items.map(item => ( 
+                                    this.state.attributes[attribute.id] !== null && <Button
                                         key={item.id}
                                         setAttribute={() => this.setAttribute(attribute.id, item.id)}
                                         displayValue={item.displayValue}
+                                        isSelected={this.state.attributes[attribute.id] === item.id}
                                     />
 
                                     // <button key={item.id} 
@@ -105,6 +114,8 @@ export class Product extends PureComponent {
 }
 
 export class Button extends PureComponent {
+
+
     render() {
         return (
             <button onClick={this.props.setAttribute} className={this.props.isSelected ? styles.selected : styles.default}>{this.props.displayValue}</button>
