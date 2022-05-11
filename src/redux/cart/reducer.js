@@ -30,7 +30,23 @@ const addProductsToCart = (cart, product, amount) => {
 }
 
 const removeProductsFromCart = (cart, product, amount) => {
+    for (let i in cart.items) {
+        // console.log(JSON.stringify(cart[i]), product)
+        if (isEqualAttribute(cart.items[i].attributes, product.attributes)) {
+            if(cart.items[i].amount > amount){
+                cart.items[i].amount -= amount;
+                cart.quantity -= amount;
+                return cart.items;
+            }
 
+            cart.quantity -= cart.items[i].amount;
+            cart.items.splice(i, 1);
+
+            return cart.items;
+        }
+    }
+
+    return cart.items;
 }
 
 export const cart = (state = initialCartState, action) => {
@@ -43,7 +59,10 @@ export const cart = (state = initialCartState, action) => {
             });
 
         case REMOVE_PRODUCT_FROM_CART:
-
+            return Object.assign({}, state, {
+                items: removeProductsFromCart(state, action.product, action.product.amount),
+                quantity: state.quantity,
+            });
 
         default:
             return state;

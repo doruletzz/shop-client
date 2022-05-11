@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router'
 import { connect } from 'react-redux';
 import { cart } from '../redux/cart/reducer';
-import { addProductToCart } from '../redux/cart/actions';
+import { addProductToCart, removeProductFromCart } from '../redux/cart/actions';
 import Cart from './Cart';
 
 
@@ -21,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
     addProductToCart: (product) => dispatch(addProductToCart(product)),
+    removeProductFromCart: (product) => dispatch(removeProductFromCart(product)),
 });
 
 

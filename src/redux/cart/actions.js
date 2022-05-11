@@ -9,7 +9,7 @@ export const addProductToCart = (product) => {
     }
 }
 
-export const removeProductFromCart = async (product) => {
+export const removeProductFromCart = (product) => {
     return {
         type: REMOVE_PRODUCT_FROM_CART,
         product: product

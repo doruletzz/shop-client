@@ -1,3 +1,5 @@
+@use '../styles/theme';
+
 .container {
     display: flex;
 
@@ -23,5 +25,59 @@
 
         .image {
         }
+    }
+}
+
+.swatch {
+    vertical-align: top;
+
+    display: inline-block;
+    border: 0;
+
+    margin-right: 0.4rem;
+
+    .default {
+        font-size: 1rem;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border: 0;
+    }
+
+    .selected {
+        font-size: 1rem;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        border: 0.1rem solid theme.$highlight-color;
+    }
+}
+
+.attribute {
+    vertical-align: top;
+    display: inline-block;
+
+    border: 0;
+    margin-right: 0.4rem;
+
+    .default {
+        font-size: 1rem;
+
+        display: inline-block;
+        padding: 0.6rem 1rem;
+        width: 5rem;
+        background-color: theme.$background-color;
+        border-color: theme.$primary-color;
+    }
+
+    .selected {
+
+        font-size: 1rem;
+        display: inline-block;
+        padding: 0.6rem 1rem;
+        width: 5rem;
+        background-color: theme.$primary-color;
+        border-color: theme.$background-color;
+        color: theme.$background-color;
     }
 }

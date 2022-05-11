@@ -9,7 +9,6 @@ export class DropdownCurrency extends PureComponent {
         console.log(this.props.currencies)
     }
 
-
     render() {
         return (
             <div className={styles.currency}>
