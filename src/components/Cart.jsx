@@ -39,10 +39,10 @@ export class Cart extends PureComponent {
     render() {
         return (
             <div>
-                <h1 className={styles.cart_title}>CART</h1>
-                <hr />
+                <h1 className={styles.heading}>CART</h1>
                 {this.props.items.map(item => (
                     <div key={item.id} >
+                        <hr />
                         <div className={styles.container}>
                             <div className={styles.product}>
                                 <Link to={item.id}>
@@ -101,10 +101,12 @@ export class Cart extends PureComponent {
                                 <img className={styles.image} src={item.gallery[0]} width="160px" />
                             </div>
                         </div>
-                        <hr />
                     </div>
                 ))}
+               
+
                 {this.props.items[0] && <div>
+                    <hr />
                     <h2>Tax 21% : {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}{(this.calculateTotal() * TAX_AMOUNT).toFixed(2)}</h2>
                     <h2>Quantity : {this.props.quantity}</h2>
                     <h2>Total : {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}{(this.calculateTotal() + this.calculateTotal() * TAX_AMOUNT).toFixed(2)}</h2>

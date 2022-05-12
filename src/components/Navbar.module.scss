@@ -11,11 +11,13 @@
 .wrapper {
     margin: 0;
     position: fixed;
-    top: 0;
+    top: -1rem;
     padding: 0rem 6rem;
     height: 5rem;
     width: 99%;
-    background-color: white;
+    background-color: theme.$background-color;
+
+    z-index: 2;
 }
 
 .navbar {
@@ -63,6 +65,6 @@
 
         font-family: theme.$primary-font-family;
         gap: 2rem;
-        
+
     }
 }

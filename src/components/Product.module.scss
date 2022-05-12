@@ -1,6 +1,7 @@
 @use '../styles/theme';
 
 .container {
+
     display: flex;
 }
 
@@ -11,6 +12,7 @@
 
 
 .right {
+    
     flex-basis: 33%;
     display: block;
 }
@@ -23,6 +25,8 @@
 
     padding: 0;
     margin: 0;
+
+    margin-bottom: 0.5rem;
 }
 
 .subtitle {
