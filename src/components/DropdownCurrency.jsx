@@ -13,7 +13,7 @@ export class DropdownCurrency extends PureComponent {
         return (
             <div className={styles.currency}>
                 <button className={styles.drop_button}>
-                    {this.props.currencies[this.props.index] && this.props.currencies[this.props.index].symbol}
+                    {this.props.currencies[this.props.index] && (this.props.currencies[this.props.index].symbol + "▾")}
 
                 </button>
                 <div className={styles.drop_content}>

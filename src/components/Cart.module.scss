@@ -1,5 +1,19 @@
 @use '../styles/theme';
 
+.cart_title{
+    font-size: 1.875rem;
+            font-weight: 600;
+            font-family: theme.$primary-font-family;
+
+            text-decoration: none;
+            color: theme.$primary-color;
+
+            padding: 0;
+            margin: 0;
+        
+            margin-bottom: 1rem;
+}
+
 .container {
     display: flex;
 
@@ -7,10 +21,49 @@
     justify-content: flex-end;
 
     align-items: stretch;
+    padding: 1rem 0;
 
     .product {
         align-self: flex-start;
         margin-right: auto;
+
+        .title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            font-family: theme.$primary-font-family;
+
+            text-decoration: none;
+            color: theme.$primary-color;
+
+            padding: 0;
+            margin: 0;
+        
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle{
+            font-size: 1.875rem;
+            font-weight: 400;
+            font-family: theme.$primary-font-family;
+            color: theme.$primary-color;
+
+            
+            padding: 0;
+            margin: 0;
+        
+            margin-bottom: 1rem;
+        }
+
+        .price{
+            margin: 0;
+
+            font-size: 1.75rem;
+            font-family: theme.$primary-font-family;
+        
+            font-weight: 700;
+        
+            margin-bottom: 1rem;
+        }
     }
 
     .amount {
@@ -19,6 +72,16 @@
         justify-content: space-between;
 
         text-align: center;
+
+        font-family: theme.$primary-font-family;
+
+        .amount_button{
+            background-color: theme.$background-color;
+            width: 2.5rem;
+            height: 2.5rem;
+
+            border: solid 2px black ;
+        }
     }
 
     .gallery {
@@ -31,26 +94,35 @@
 .swatch {
     vertical-align: top;
 
+    margin: 0;
+    padding: 0;
     display: inline-block;
     border: 0;
 
     margin-right: 0.4rem;
 
     .default {
-        font-size: 1rem;
+        font-size: 0.75rem;
         display: inline-block;
         width: 2rem;
         height: 2rem;
         border: 0;
+        border: 0.125rem solid theme.$background-color;
     }
 
     .selected {
-        font-size: 1rem;
+        font-size: 0.75rem;
         display: inline-block;
         width: 2rem;
         height: 2rem;
-        border: 0.1rem solid theme.$highlight-color;
+        border: 0.125rem solid theme.$highlight-color;
     }
+}
+
+.attribute_container{
+
+    font-size: 1.125rem;
+    font-family: theme.$secondary-font-family;
 }
 
 .attribute {
@@ -58,26 +130,47 @@
     display: inline-block;
 
     border: 0;
+    margin: 0;
+    padding: 0;
     margin-right: 0.4rem;
 
+
     .default {
-        font-size: 1rem;
+        font-size: 0.75rem;
 
         display: inline-block;
         padding: 0.6rem 1rem;
-        width: 5rem;
         background-color: theme.$background-color;
         border-color: theme.$primary-color;
     }
 
     .selected {
 
-        font-size: 1rem;
+        font-size: 0.75rem;
         display: inline-block;
         padding: 0.6rem 1rem;
-        width: 5rem;
         background-color: theme.$primary-color;
-        border-color: theme.$background-color;
+        border-color: theme.$primary-color;
         color: theme.$background-color;
     }
 }
+
+
+
+.order_button {
+
+    padding: 1rem 8rem;
+    border: 0;
+
+    color: theme.$background-color;
+    background-color: theme.$highlight-color;
+
+    margin-bottom: 2rem;
+
+    &:hover {
+        background-color: rgb(33, 184, 99);
+        cursor: pointer;
+    }
+}
+
+

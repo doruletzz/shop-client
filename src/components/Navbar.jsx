@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget';
 import DropdownCurrency from './DropdownCurrency';
 import DropdownCurrencyWrapper from './DropdownCurrencyWrapper';
 
@@ -33,8 +34,10 @@ export default class Navbar extends Component {
                     <div className={styles.brand}>logo</div>
                     <div className={styles.rhs}>
                         <DropdownCurrencyWrapper />
-                        <Link to="/cart"> 🛒
-                        </Link>
+                        <CartWidget/>
+
+                        {/* <Link to="/cart"> 🛒 */}
+                        {/* </Link> */}
                     </div>
                 </nav>
             </div>

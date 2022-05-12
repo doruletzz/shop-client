@@ -56,17 +56,13 @@
 
 
     .rhs {
-        display: block;
+        display: flex;
         flex: 4;
         text-align: right;
+        justify-content: end;
+
         font-family: theme.$primary-font-family;
-        overflow: hidden;
-
-        // flex-grow: 4;
-        .cart {
-            display: inline-block;
-        }
-
+        gap: 2rem;
         
     }
 }
