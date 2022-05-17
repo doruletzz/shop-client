@@ -79,6 +79,10 @@
 
 .button {
 
+    font-family: theme.$primary-font-family;
+    font-weight: 700    ;
+    font-size: 1rem;
+
     padding: 1rem 4rem;
     border: 0;
 
@@ -90,6 +94,11 @@
     &:hover {
         background-color: rgb(33, 184, 99);
         cursor: pointer;
+    }
+        
+    &:active{
+        background-color: theme.$primary-color;
+        color: theme.$background-color;
     }
 }
 

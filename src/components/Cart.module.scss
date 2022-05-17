@@ -72,7 +72,17 @@
             width: 2.5rem;
             height: 2.5rem;
 
-            border: solid 2px black ;
+            border: solid 2px theme.$primary-color ;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &:active{
+                color: theme.$background-color;
+                background-color: theme.$primary-color;
+                border: 0.125rem solid theme.$background-color;
+            }
         }
     }
 
@@ -167,6 +177,13 @@
         background-color: rgb(33, 184, 99);
         cursor: pointer;
     }
+
+    &:active{
+        background-color: theme.$primary-color;
+        color: theme.$background-color;
+    }
+
+   
 }
 
 
