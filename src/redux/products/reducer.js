@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import { FETCH_PRODUCTS, RECEIVE_PRODUCTS, FETCH_PRODUCT_DETAILS, RECEIVE_PRODUCT_DETAILS } from "./actions";
+import {
+  FETCH_PRODUCTS,
+  RECEIVE_PRODUCTS,
+  FETCH_PRODUCT_DETAILS,
+  RECEIVE_PRODUCT_DETAILS,
+} from './actions';
 
 const initialProductsState = {
   isFetching: false,
@@ -9,7 +14,7 @@ const initialProductsState = {
 const initialProductDetialsState = {
   isFetching: false,
   item: {},
-}
+};
 
 export const products = (state = initialProductsState, action) => {
   switch (action.type) {
@@ -41,9 +46,9 @@ export const productDetails = (state = initialProductDetialsState, action) => {
     default:
       return state;
   }
-}
+};
 
-export default combineReducers({ 
+export default combineReducers({
   products: products,
   productDetails: productDetails,
 });
