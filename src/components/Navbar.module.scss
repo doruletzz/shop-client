@@ -1,70 +1,66 @@
 @use '../styles/theme';
 
 * {
-
-    box-sizing: border-box;
-    padding: 0;
-    font-size: 1.125rem;
-    text-decoration: none;
+  box-sizing: border-box;
+  padding: 0;
+  font-size: 1.125rem;
+  text-decoration: none;
 }
 
 .wrapper {
-    margin: 0;
-    position: fixed;
-    top: -1rem;
-    padding: 0rem 6rem;
-    height: 5rem;
-    width: 99%;
-    background-color: theme.$background-color;
+  margin: 0;
+  position: fixed;
+  top: -1rem;
+  padding: 0rem 6rem;
+  height: 5rem;
+  width: 99%;
+  background-color: theme.$background-color;
 
-    z-index: 2;
+  z-index: 2;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-center;
 
-    .brand {
+  .brand {
+    color: theme.$highlight-color;
+    font-weight: 600;
+    flex: 4;
+    text-align: center;
+    font-family: theme.$primary-font-family;
+  }
+
+  .links {
+    display: inline-block;
+    flex: 4;
+    flex-direction: column;
+    font-family: theme.$primary-font-family;
+
+    .link {
+      display: inline-block;
+      list-style: none;
+      text-align: center;
+      margin-right: 1.5rem;
+
+      color: theme.$primary-color;
+      padding: 1.25rem 0.25rem;
+
+      &:hover {
         color: theme.$highlight-color;
-        font-weight: 600;
-        flex: 4;
-        text-align: center;
-        font-family: theme.$primary-font-family;
+        box-shadow: 0px 2px 0px rgb(7, 236, 106);
+      }
     }
+  }
 
-    .links {
-        display: inline-block;
-        flex: 4;
-        flex-direction: column;
-        font-family: theme.$primary-font-family;
+  .rhs {
+    display: flex;
+    flex: 4;
+    text-align: right;
+    justify-content: end;
 
-
-        .link {
-            display: inline-block;
-            list-style: none;
-            text-align: center;
-            margin-right: 1.5rem;
-
-            color: theme.$primary-color;
-            padding: 1.25rem 0.25rem;
-
-            &:hover {
-                color: theme.$highlight-color;
-                box-shadow: 0px 2px 0px rgb(7, 236, 106);
-            }
-        }
-    }
-
-
-    .rhs {
-        display: flex;
-        flex: 4;
-        text-align: right;
-        justify-content: end;
-
-        font-family: theme.$primary-font-family;
-        gap: 2rem;
-
-    }
+    font-family: theme.$primary-font-family;
+    gap: 2rem;
+  }
 }

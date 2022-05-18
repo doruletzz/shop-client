@@ -1,161 +1,147 @@
 @use '../styles/theme';
 
 .container {
-
-    display: flex;
+  display: flex;
 }
 
 .left {
-    flex-basis: 66%;
-    display: block;
+  flex-basis: 66%;
+  display: block;
 }
-
 
 .right {
-    
-    flex-basis: 33%;
-    display: block;
+  flex-basis: 33%;
+  display: block;
 }
 
-
 .title {
-    font-size: 1.875rem;
-    font-weight: 600;
-    font-family: theme.$primary-font-family;
+  font-size: 1.875rem;
+  font-weight: 600;
+  font-family: theme.$primary-font-family;
 
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
-    font-size: 1.875rem;
-    font-weight: 400;
-    font-family: theme.$primary-font-family;
+  font-size: 1.875rem;
+  font-weight: 400;
+  font-family: theme.$primary-font-family;
 
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .description {
-
-    font-size: 1rem;
-    font-family: theme.$secondary-font-family;
-
+  font-size: 1rem;
+  font-family: theme.$secondary-font-family;
 }
 
 .attribute_container {
+  margin-bottom: 2rem;
 
-    margin-bottom: 2rem;
-
-    font-size: 1.125rem;
-    font-family: theme.$secondary-font-family;
-
+  font-size: 1.125rem;
+  font-family: theme.$secondary-font-family;
 }
 
 .price_value {
-    margin: 0;
+  margin: 0;
 
-    font-size: 1.75rem;
-    font-family: theme.$primary-font-family;
+  font-size: 1.75rem;
+  font-family: theme.$primary-font-family;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    margin-bottom: 2rem;
-
+  margin-bottom: 2rem;
 }
 
 .price {
-    margin: 0;
+  margin: 0;
 
-    font-size: 1rem;
-    font-family: theme.$secondary-font-family;
+  font-size: 1rem;
+  font-family: theme.$secondary-font-family;
 
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .button {
+  font-family: theme.$primary-font-family;
+  font-weight: 700;
+  font-size: 1rem;
 
-    font-family: theme.$primary-font-family;
-    font-weight: 700    ;
-    font-size: 1rem;
+  padding: 1rem 4rem;
+  border: 0;
 
-    padding: 1rem 4rem;
-    border: 0;
+  color: theme.$background-color;
+  background-color: theme.$highlight-color;
 
+  margin-bottom: 2rem;
+
+  &:hover {
+    background-color: rgb(33, 184, 99);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: theme.$primary-color;
     color: theme.$background-color;
-    background-color: theme.$highlight-color;
-
-    margin-bottom: 2rem;
-
-    &:hover {
-        background-color: rgb(33, 184, 99);
-        cursor: pointer;
-    }
-        
-    &:active{
-        background-color: theme.$primary-color;
-        color: theme.$background-color;
-    }
+  }
 }
 
 .swatch {
-    vertical-align: top;
+  vertical-align: top;
 
+  display: inline-block;
+  border: 0;
+
+  margin-right: 0.4rem;
+
+  .default {
+    cursor: pointer;
+
+    font-size: 1rem;
     display: inline-block;
-    border: 0;
+    width: 2rem;
+    height: 2rem;
+    border: 0.125rem solid theme.$background-color;
+  }
 
-    margin-right: 0.4rem;
-
-
-    .default {
-        cursor: pointer;
-
-        font-size: 1rem;
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        border: 0.125rem solid theme.$background-color;
-
-    }
-
-    .selected {
-        font-size: 1rem;
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        border: 0.125rem solid theme.$highlight-color;
-    }
+  .selected {
+    font-size: 1rem;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.125rem solid theme.$highlight-color;
+  }
 }
 
 .attribute {
-    vertical-align: top;
+  vertical-align: top;
+  display: inline-block;
+
+  border: 0;
+  margin-right: 0.4rem;
+
+  .default {
+    cursor: pointer;
+
+    font-size: 0.8rem;
     display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: theme.$background-color;
+    border-color: theme.$primary-color;
+  }
 
-    border: 0;
-    margin-right: 0.4rem;
-
-
-    .default {
-        cursor: pointer;
-
-        font-size: 0.8rem;
-        display: inline-block;
-        padding: 0.6rem 1rem;
-        background-color: theme.$background-color;
-        border-color: theme.$primary-color;
-    }
-
-    .selected {
-
-        font-size: 0.8rem;
-        display: inline-block;
-        padding: 0.6rem 1rem;
-        background-color: theme.$primary-color;
-        border-color: theme.$primary-color;
-        color: theme.$background-color;
-    }
+  .selected {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: theme.$primary-color;
+    border-color: theme.$primary-color;
+    color: theme.$background-color;
+  }
 }

@@ -1,15 +1,19 @@
+.container {
+  position: relative;
 
-
-.container{
-    position: relative;
-
-
-    .bag_dropdown{
+  .bag_dropdown {
+    position: absolute;
     background-color: white;
+    display: block;
+    width: 24rem;
+    right: -2rem;
 
-        position: absolute;
-        display: block;
-        right: 0;
+    .item {
+      margin: 0 2rem;
 
+      * {
+        font-size: 14px;
+      }
     }
+  }
 }

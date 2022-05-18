@@ -1,34 +1,31 @@
 .container {
-    display: flex;
+  display: flex;
 }
 
-
 .side {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin-right: 2rem;
+  margin-right: 2rem;
 
-    .image {
-        width: 6rem;
-        margin-bottom: 1rem;
+  .image {
+    width: 6rem;
+    margin-bottom: 1rem;
 
-        &:hover {
-            box-shadow: 0px 4px 12px rgba(168, 172, 176, 0.19);
-        }
-
+    &:hover {
+      box-shadow: 0px 4px 12px rgba(168, 172, 176, 0.19);
     }
+  }
 
-    .grayed {
-        opacity: .3;
-    }
+  .grayed {
+    opacity: 0.3;
+  }
 }
 
 .main {
+  margin-right: 4rem;
 
-    margin-right: 4rem;
-
-    .image {
-        width: 100%;
-    }
+  .image {
+    width: 100%;
+  }
 }

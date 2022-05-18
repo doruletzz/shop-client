@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import Cart from './Cart';
-import CartWrapper from './CartWrapper';
+import BagWrapper from './BagWrapper';
 
 import styles from './CartWidget.module.scss';
 
@@ -37,7 +37,9 @@ export class CartWidget extends PureComponent {
 
         {this.state.show && (
           <div className={styles.bag_dropdown}>
-            <CartWrapper />
+            <div className={styles.item}>
+              <BagWrapper />
+            </div>
           </div>
         )}
       </div>

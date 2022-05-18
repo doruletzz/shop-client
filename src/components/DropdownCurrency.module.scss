@@ -1,63 +1,54 @@
 @use '../styles/theme';
 
-
 .currency {
+  display: inline-block;
+  position: relative;
 
-    display: inline-block;
-    position: relative;
+  align-items: center;
+
+  .drop_button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 
     align-items: center;
+  }
 
-    .drop_button {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
+  .drop_content {
+    display: none;
+  }
 
-        align-items: center;
+  &:hover .drop_content {
+    position: absolute;
+    display: block;
+    left: -1.375rem;
 
+    button {
+      padding: 1rem 0.2rem;
+
+      width: 6rem;
+
+      color: inherit;
+      border: none;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+
+      background-color: theme.$background-color;
+
+      display: block;
+
+      &:hover {
+        padding: 1rem 0.2rem;
+        background-color: theme.$secondary-color;
+      }
     }
 
-
-    .drop_content {
-        display: none;
-    }
-
-    &:hover .drop_content {
-
-
-        position: absolute;
-        display: block;
-        left:-1.375rem;
-
-        button {
-            padding: 1rem 0.2rem; 
-            
-            width: 6rem;
-
-            color: inherit;
-            border: none;
-            font: inherit;
-            cursor: pointer;
-            outline: inherit;
-
-            background-color: theme.$background-color;
-
-            display: block;
-
-            &:hover {
-                padding: 1rem 0.2rem; 
-                background-color: theme.$secondary-color;
-            }
-
-        }
-
-        /* Important for vertical align on mobile phones */
-        margin: 0;
-    }
-
-
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+  }
 }
