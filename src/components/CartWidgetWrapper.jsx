@@ -3,8 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { useParams } from 'react-router';
 import { connect } from 'react-redux';
-import { cart } from '../redux/cart/reducer';
-import { addProductToCart, removeProductFromCart } from '../redux/cart/actions';
+import { cart } from '../features/cart/reducer';
+import { addProductToCart, removeProductFromCart } from '../features/cart/actions';
 import Cart from './Cart';
 import CartWidget from './CartWidget';
 

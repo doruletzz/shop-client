@@ -2,10 +2,10 @@ import React from 'react';
 
 import { useParams } from 'react-router';
 import { connect } from 'react-redux';
-import { cart } from '../redux/cart/reducer';
-import { addProductToCart } from '../redux/cart/actions';
+import { cart } from '../features/cart/reducer';
+import { addProductToCart } from '../features/cart/actions';
 import Cart from './Cart';
-import { fetchCurrencies, updateCurrencyIndex } from '../redux/currency/actions';
+import { fetchCurrencies, updateCurrencyIndex } from '../features/currency/actions';
 import DropdownCurrency from './DropdownCurrency';
 
 const mapStateToProps = (state, ownProps) => {

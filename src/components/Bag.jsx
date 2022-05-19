@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 import styles from './Bag.module.scss';
 import MiniGallery from './MiniGallery';
@@ -28,7 +28,7 @@ export class Bag extends PureComponent {
           <div key={item.id}>
             <div className={styles.container}>
               <div className={styles.product}>
-                <Link to={item.id}>
+                <Link to={`all/${item.id}`}>
                   <h1 className={styles.title}>{item.name}</h1>
                 </Link>
                 <h2 className={styles.subtitle}>{item.brand}</h2>
