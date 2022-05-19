@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './Bag.module.scss';
+import MiniGallery from './MiniGallery';
 
 export class Bag extends PureComponent {
   addToCart(product) {
@@ -91,7 +92,9 @@ export class Bag extends PureComponent {
                 </div>
 
                 <div className={styles.gallery}>
-                  <img className={styles.image} src={item.gallery[0]} height="100%" />
+                  {/* <div className={styles.image} /> */}
+                  <MiniGallery gallery={item.gallery} />
+                  {/* <img className={styles.image} src={item.gallery[0]} /> */}
                 </div>
               </div>
             </div>

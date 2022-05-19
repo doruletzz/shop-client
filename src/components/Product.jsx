@@ -35,6 +35,12 @@ export class Product extends PureComponent {
     // console.log({product: this.props.product, attributes: this.state.attributes});
 
     // deep copy of the object
+
+    if (Object.keys(this.state.attributes).length !== this.props.product.attributes.length) {
+      alert('you have not selected all attributes');
+      return;
+    }
+
     const attributes = JSON.parse(JSON.stringify(this.state.attributes));
 
     const product = {
@@ -92,11 +98,11 @@ export class Product extends PureComponent {
                           />
                         )
 
-                        // <button key={item.id}
-                        //     className={this.state.attributes[attribute.id] === item.id ? styles.selected : styles.default}
-                        //     onClick={() => this.setAttribute(attribute.id, item.id)}>
-                        //             {item.displayValue}
-                        // </button>
+                      // <button key={item.id}
+                      //     className={this.state.attributes[attribute.id] === item.id ? styles.selected : styles.default}
+                      //     onClick={() => this.setAttribute(attribute.id, item.id)}>
+                      //             {item.displayValue}
+                      // </button>
                     )}
               </div>
             ))}

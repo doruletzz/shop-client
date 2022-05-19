@@ -1,5 +1,26 @@
+@use '../styles/theme';
+
 .container {
   position: relative;
+
+  .cart {
+    position: relative;
+    .quantity {
+      font-size: 0.5em;
+
+      color: theme.$background-color;
+      background-color: theme.$primary-color;
+      width: 1rem;
+      height: 1rem;
+      padding-top: 0.1rem;
+      border-radius: 50%;
+      text-align: center;
+      position: absolute;
+
+      right: -0.3em;
+      top: -0.3em;
+    }
+  }
 
   .bag_dropdown {
     position: absolute;
@@ -8,12 +29,12 @@
     width: 24rem;
     right: -2rem;
 
-    .item {
-      margin: 0 2rem;
+    * {
+      font-size: 14px;
+    }
 
-      * {
-        font-size: 14px;
-      }
+    .item {
+      margin: 0 1rem;
     }
   }
 }

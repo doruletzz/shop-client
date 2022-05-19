@@ -1,0 +1,51 @@
+@use '../styles/theme';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  font-size: inherit;
+}
+
+.button_wrapper {
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+
+  margin: 0.5em;
+  font-size: inherit;
+
+  .button {
+    background-color: theme.$primary-color;
+    opacity: 80%;
+    color: theme.$background-color;
+    width: 1.75em;
+    height: 1.75em;
+
+    font-size: 0.75em;
+    font-family: theme.$primary-font-family;
+
+    border: none;
+    margin-left: 0.4em;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 100%;
+    }
+
+    &:active {
+      color: theme.$background-color;
+      background-color: theme.$primary-color;
+      border: 0.125rem solid theme.$background-color;
+      opacity: 100%;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

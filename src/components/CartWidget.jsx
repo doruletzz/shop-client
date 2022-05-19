@@ -17,13 +17,13 @@ export class CartWidget extends PureComponent {
   }
 
   showCart(e) {
-    this.setState((state) => {
+    this.setState(() => {
       return { show: true };
     });
   }
 
   hideCart(e) {
-    this.setState((state) => {
+    this.setState(() => {
       return { show: false };
     });
   }
@@ -32,6 +32,9 @@ export class CartWidget extends PureComponent {
     return (
       <div className={styles.container} onMouseEnter={this.showCart} onMouseLeave={this.hideCart}>
         <Link className={styles.cart} to="/cart">
+          {this.props.quantity > 0 && !this.state.show && (
+            <div className={styles.quantity}>{this.props.quantity}</div>
+          )}
           🛒
         </Link>
 
