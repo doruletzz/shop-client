@@ -29,8 +29,37 @@
   }
 }
 
+.tax,
+.quantity {
+  color: theme.$primary-color;
+  font-family: theme.$primary-font-family;
+  font-weight: 400;
+  font-size: 1.5rem;
+
+  b {
+    color: theme.$primary-color;
+    font-family: theme.$primary-font-family;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.total {
+  color: theme.$primary-color;
+  font-family: theme.$primary-font-family;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  b {
+    color: theme.$primary-color;
+    font-family: theme.$primary-font-family;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
 h1 {
-  font-size: 1.875em;
+  font-size: 1.875rem;
 }
 
 h2,

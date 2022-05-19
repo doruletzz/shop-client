@@ -1,8 +1,11 @@
 @use './styles/theme';
 
-* {
+html,
+body {
+  margin: 0;
+  height: 100%;
 }
 
-.container{
-    padding: 4.5rem 6rem
+.container {
+  padding: 4.5rem 6rem;
 }

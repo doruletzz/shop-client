@@ -28,16 +28,32 @@ export class Cart extends PureComponent {
         {this.props.items[0] && (
           <div>
             {/* <hr /> */}
-            <h2>
-              Tax 21% : {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}
-              {(this.calculateTotal() * TAX_AMOUNT).toFixed(2)}
+            <h2 className={styles.tax}>
+              Tax 21% :
+              <b>
+                {' '}
+                {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}
+                {(this.calculateTotal() * TAX_AMOUNT).toFixed(2)}
+              </b>
             </h2>
-            <h2>Quantity : {this.props.quantity}</h2>
-            <h2>
-              Total : {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}
-              {(this.calculateTotal() + this.calculateTotal() * TAX_AMOUNT).toFixed(2)}
+            <h2 className={styles.quantity}>
+              Quantity : <b>{this.props.quantity}</b>
             </h2>
-            <button className={styles.order_button}>ORDER</button>
+            <h2 className={styles.total}>
+              Total :
+              <b>
+                {' '}
+                {this.props.items[0].prices[this.props.currencyIndex].currency.symbol}
+                {(this.calculateTotal() + this.calculateTotal() * TAX_AMOUNT).toFixed(2)}
+              </b>
+            </h2>
+            <button
+              onClick={() => {
+                alert('items checked out (method not implemented)');
+              }}
+              className={styles.order_button}>
+              CHECKOUT
+            </button>
           </div>
         )}
       </div>
