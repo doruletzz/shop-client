@@ -17,8 +17,11 @@
       text-align: center;
       position: absolute;
 
-      right: -0.3em;
-      top: -0.3em;
+      right: -0.8em;
+      top: -0.8em;
+    }
+    .icon {
+      padding-top: 0.3em;
     }
   }
 
@@ -33,8 +36,64 @@
       font-size: 14px;
     }
 
-    .item {
-      margin: 0 1rem;
+    .dropdown_container {
+      margin: 0 2rem;
+
+      display: block;
+      align-items: left;
+      text-align: left;
+
+      .heading {
+        font-size: 1.125em;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        gap: 3em;
+
+        .button_primary {
+          width: 100%;
+          border: 0;
+          padding: 0.5em;
+
+          color: theme.$background-color;
+          background-color: theme.$highlight-color;
+          font-family: theme.$primary-font-family;
+          font-weight: 600;
+
+          &:hover {
+            background-color: rgb(33, 184, 99);
+            cursor: pointer;
+          }
+
+          &:active {
+            background-color: theme.$primary-color;
+            color: theme.$background-color;
+          }
+        }
+
+        .button_secondary {
+          background-color: theme.$background-color;
+          width: 100%;
+          border: 0;
+
+          padding: 0.5em;
+
+          border: solid 2px theme.$primary-color;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            color: theme.$background-color;
+            background-color: theme.$primary-color;
+            border: 0.125rem solid theme.$background-color;
+          }
+        }
+      }
     }
   }
 }

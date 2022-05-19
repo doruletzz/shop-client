@@ -16,6 +16,10 @@ export default class CategoryList extends PureComponent {
   }
 
   render() {
+    if (this.props.isLoading) return <p>i'm loading</p>;
+
+    if (this.props.error) return <p>{this.props.error.message}</p>;
+
     return (
       <>
         <h1 className={styles.heading}>{this.props.category.toUpperCase()}</h1>

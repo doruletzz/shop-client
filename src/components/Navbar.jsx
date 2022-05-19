@@ -23,7 +23,9 @@ export default class Navbar extends Component {
               <li className={styles.link}>CLOTHES</li>
             </Link>
           </ul>
-          <div className={styles.brand}>logo</div>
+          <div className={styles.brand}>
+            <img src="/Logo.svg" />
+          </div>
           <div className={styles.rhs}>
             <DropdownCurrencyWrapper />
             <CartWidgetWrapper />

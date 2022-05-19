@@ -34,13 +34,12 @@ export class Product extends PureComponent {
   addToCart() {
     // console.log({product: this.props.product, attributes: this.state.attributes});
 
-    // deep copy of the object
-
     if (Object.keys(this.state.attributes).length !== this.props.product.attributes.length) {
       alert('you have not selected all attributes');
       return;
     }
 
+    // deep copy of the object
     const attributes = JSON.parse(JSON.stringify(this.state.attributes));
 
     const product = {
@@ -59,6 +58,10 @@ export class Product extends PureComponent {
   }
 
   render() {
+    if (this.props.isLoading) return <p>i'm loading</p>;
+
+    if (this.props.error) return <p>{this.props.error.message}</p>;
+
     return (
       <div className={styles.container}>
         <div className={styles.left}>

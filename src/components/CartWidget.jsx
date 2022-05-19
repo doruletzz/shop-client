@@ -35,13 +35,20 @@ export class CartWidget extends PureComponent {
           {this.props.quantity > 0 && !this.state.show && (
             <div className={styles.quantity}>{this.props.quantity}</div>
           )}
-          🛒
+          <img className={styles.icon} src="/Cart.svg" />
+          {/* 🛒 */}
         </Link>
 
         {this.state.show && (
           <div className={styles.bag_dropdown}>
-            <div className={styles.item}>
+            <div className={styles.dropdown_container}>
+              <h1 className={styles.heading}>{`My Bag, ${this.props.quantity} Items`}</h1>
               <BagWrapper />
+
+              <div className={styles.buttons}>
+                <button className={styles.button_secondary}>cart</button>
+                <button className={styles.button_primary}>order me</button>
+              </div>
             </div>
           </div>
         )}

@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps;
 
   const {
-    productDetails: { isFetching, item }
+    productDetails: { isFetching, item, error }
   } = state.productsReducer;
 
   const {
@@ -26,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     currencyIndex: index,
     isLoading: isFetching,
+    error,
     product: item,
     productId: id,
     cart: items

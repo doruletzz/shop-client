@@ -22,6 +22,7 @@ export default class App extends Component {
               <Route path="/:category/:productId" element={<ProductWrapper />} />
               <Route path="/:category" element={<CategoryListWrapper />} />
               <Route path="/cart" element={<CartWrapper />} />
+              <Route path="*" element={<Navigate to="/all" replace />} />
               {/* <Route path="/:category/:productId" element={} /> */}
             </Routes>
           </div>
