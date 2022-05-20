@@ -6,7 +6,7 @@ import { cart } from '../features/cart/reducer';
 import { addProductToCart, removeProductFromCart } from '../features/cart/actions';
 import Bag from './Bag';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, _) => {
   const {
     cart: { items, quantity }
   } = state.cartReducer;

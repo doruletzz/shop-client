@@ -5,19 +5,19 @@ import styles from './Bag.module.scss';
 import MiniGallery from './MiniGallery';
 
 export class Bag extends PureComponent {
+  // adds one product to cart
   addToCart(product) {
     const oneProduct = { ...product };
     oneProduct.amount = 1;
 
-    console.log(oneProduct);
     this.props.addProductToCart(oneProduct);
   }
 
+  // removes one product from cart
   removeFromCart(product) {
     const oneProduct = { ...product };
     oneProduct.amount = 1;
 
-    console.log(oneProduct);
     this.props.removeProductFromCart(oneProduct);
   }
 
@@ -36,9 +36,6 @@ export class Bag extends PureComponent {
                   {item.prices[this.props.currencyIndex].currency.symbol}
                   {item.prices[this.props.currencyIndex].amount}
                 </h2>
-                {/* {Object.entries(item.attributes).map(attribute => (
-                                  <div>{attribute.join(" : ")}</div>
-                              ))} */}
                 {item.allAttributes.map((attribute) => (
                   <div key={attribute.id} className={styles.attribute_container}>
                     <h4 className={styles.attribute_name}>{attribute.name.toUpperCase()}: </h4>
@@ -67,12 +64,6 @@ export class Bag extends PureComponent {
                               {attribItem.displayValue}
                             </button>
                           </div>
-
-                          // <button key={item.id}
-                          //     className={this.state.attributes[attribute.id] === item.id ? styles.selected : styles.default}
-                          //     onClick={() => this.setAttribute(attribute.id, item.id)}>
-                          //             {item.displayValue}
-                          // </button>
                         ))}
                   </div>
                 ))}
@@ -92,9 +83,7 @@ export class Bag extends PureComponent {
                 </div>
 
                 <div className={styles.gallery}>
-                  {/* <div className={styles.image} /> */}
                   <MiniGallery gallery={item.gallery} />
-                  {/* <img className={styles.image} src={item.gallery[0]} /> */}
                 </div>
               </div>
             </div>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import CategoryListWrapper from './components/CategoryListWrapper';
-import Navbar from './components/Navbar';
 
+import CategoryListWrapper from './pages/category/CategoryListWrapper';
+import ProductWrapper from './pages/product/ProductWrapper';
+import CartWrapper from './pages/cart/CartWrapper';
+
+import Navbar from './components/Navbar';
 import styles from './App.module.scss';
 
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { store } from './features/app/store';
 import { Provider } from 'react-redux';
-import ProductWrapper from './components/ProductWrapper';
-import Cart from './components/Cart';
-import CartWrapper from './components/CartWrapper';
 
 export default class App extends Component {
   render() {

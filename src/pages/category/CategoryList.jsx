@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from '../../components/ProductCard';
 import { Link } from 'react-router-dom';
 
 import styles from './CategoryList.module.scss';

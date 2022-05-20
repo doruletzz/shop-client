@@ -1,21 +1,17 @@
 import React, { PureComponent } from 'react';
 
-import Bag from './Bag';
+import Bag from '../../components/Bag';
+import { TAX_AMOUNT } from '../../utils/constants';
 
 import styles from './Cart.module.scss';
 
-const TAX_AMOUNT = 21 / 100;
-
 export class Cart extends PureComponent {
-  componentDidMount() {
-    console.log(this.props.items);
-  }
-
+  // Calculates total sum of prices in the cart
   calculateTotal() {
     const sum = this.props.items
       .map((item) => item.prices[this.props.currencyIndex].amount * item.amount)
       .reduce((total, el) => (total += el), 0);
-    console.log(sum);
+
     return sum;
   }
 

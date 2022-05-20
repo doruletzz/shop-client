@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Cart from './Cart';
+import Cart from '../pages/cart/Cart';
 import BagWrapper from './BagWrapper';
 
 import styles from './CartWidget.module.scss';
@@ -8,23 +8,24 @@ import styles from './CartWidget.module.scss';
 export class CartWidget extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props.setIsHighlighted);
+
     this.state = {
-      show: false
+      isHovered: false
     };
 
-    this.showCart = this.showCart.bind(this);
-    this.hideCart = this.hideCart.bind(this);
+    this.showCart = this.showBag.bind(this);
+    this.hideCart = this.hideBag.bind(this);
   }
 
-  showCart(e) {
+  // changes cart
+  showBag(e) {
     this.setState(() => {
       if (this.props.quantity > 0) this.props.setIsHighlighted(true);
       return { show: this.props.quantity > 0 };
     });
   }
 
-  hideCart(e) {
+  hideBag(e) {
     this.setState(() => {
       this.props.setIsHighlighted(false);
       return { show: false };
@@ -35,16 +36,16 @@ export class CartWidget extends PureComponent {
     return (
       <>
         {/* <div className={styles.highlight_overlay}></div> */}
-        <div className={styles.container} onMouseEnter={this.showCart} onMouseLeave={this.hideCart}>
+        <div className={styles.container} onMouseEnter={this.showBag} onMouseLeave={this.hideBag}>
           <Link className={styles.cart} to="/cart">
-            {this.props.quantity > 0 && !this.state.show && (
+            {this.props.quantity > 0 && !this.state.isHovered && (
               <div className={styles.quantity}>{this.props.quantity}</div>
             )}
             <img className={styles.icon} src="/Cart.svg" />
             {/* 🛒 */}
           </Link>
 
-          {this.state.show && (
+          {this.state.isHovered && (
             <div className={styles.bag_dropdown}>
               <div className={styles.dropdown_container}>
                 <h1 className={styles.heading}>{`My Bag, ${this.props.quantity} Items`}</h1>

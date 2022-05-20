@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
 import CartWidgetWrapper from './CartWidgetWrapper';
-import DropdownCurrency from './DropdownCurrency';
 import DropdownCurrencyWrapper from './DropdownCurrencyWrapper';
 
 import styles from './Navbar.module.scss';

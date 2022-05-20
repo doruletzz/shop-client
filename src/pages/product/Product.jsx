@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Gallery from './Gallery';
+import Gallery from '../../components/Gallery';
 
 import styles from './Product.module.scss';
 

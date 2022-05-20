@@ -2,11 +2,9 @@ import React from 'react';
 import Product from './Product';
 
 import { useParams } from 'react-router';
-import { fetchProductDetails, fetchProducts } from '../features/products/actions';
+import { fetchProductDetails } from '../../features/products/actions';
 import { connect } from 'react-redux';
-import { productDetails } from '../features/products/reducer';
-import { cart } from '../features/cart/reducer';
-import { addProductToCart } from '../features/cart/actions';
+import { addProductToCart } from '../../features/cart/actions';
 
 const mapStateToProps = (state, ownProps) => {
   const { id } = ownProps;

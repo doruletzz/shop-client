@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { useParams } from 'react-router';
 import { connect } from 'react-redux';
-import { cart } from '../features/cart/reducer';
-import { addProductToCart, removeProductFromCart } from '../features/cart/actions';
+import { addProductToCart, removeProductFromCart } from '../../features/cart/actions';
 import Cart from './Cart';
 
 const mapStateToProps = (state, ownProps) => {
