@@ -45,9 +45,6 @@ export default class Navbar extends Component {
             <div className={styles.rhs}>
               <DropdownCurrencyWrapper />
               <CartWidgetWrapper setIsHighlighted={this.setIsHighlighted} />
-
-              {/* <Link to="/cart"> 🛒 */}
-              {/* </Link> */}
             </div>
           </nav>
         </div>

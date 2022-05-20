@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styles from './Bag.module.scss';
 import MiniGallery from './MiniGallery';
@@ -24,8 +24,8 @@ export class Bag extends PureComponent {
   render() {
     return (
       <div>
-        {this.props.items.map((item) => (
-          <div key={item.id}>
+        {this.props.items.map((item, idx) => (
+          <div key={idx}>
             <div className={styles.container}>
               <div className={styles.product}>
                 <Link to={`all/${item.id}`}>
@@ -52,8 +52,8 @@ export class Bag extends PureComponent {
                               style={{ backgroundColor: attribItem.value }}></button>
                           </div>
                         ))
-                      : attribute.items.map((attribItem) => (
-                          <div className={styles.attribute}>
+                      : attribute.items.map((attribItem, idx) => (
+                          <div key={idx} className={styles.attribute}>
                             <button
                               key={attribItem.id}
                               className={

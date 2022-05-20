@@ -13,36 +13,34 @@ export class CartWidget extends PureComponent {
       isHovered: false
     };
 
-    this.showCart = this.showBag.bind(this);
-    this.hideCart = this.hideBag.bind(this);
+    this.showBag = this.showBag.bind(this);
+    this.hideBag = this.hideBag.bind(this);
   }
 
   // changes cart
   showBag(e) {
     this.setState(() => {
       if (this.props.quantity > 0) this.props.setIsHighlighted(true);
-      return { show: this.props.quantity > 0 };
+      return { isHovered: this.props.quantity > 0 };
     });
   }
 
   hideBag(e) {
     this.setState(() => {
       this.props.setIsHighlighted(false);
-      return { show: false };
+      return { isHovered: false };
     });
   }
 
   render() {
     return (
       <>
-        {/* <div className={styles.highlight_overlay}></div> */}
         <div className={styles.container} onMouseEnter={this.showBag} onMouseLeave={this.hideBag}>
           <Link className={styles.cart} to="/cart">
             {this.props.quantity > 0 && !this.state.isHovered && (
               <div className={styles.quantity}>{this.props.quantity}</div>
             )}
             <img className={styles.icon} src="/Cart.svg" />
-            {/* 🛒 */}
           </Link>
 
           {this.state.isHovered && (

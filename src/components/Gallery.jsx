@@ -13,7 +13,7 @@ export class Gallery extends PureComponent {
   }
 
   setHighlightedIdx(idx) {
-    this.setState((prevState) => ({ highlightedIdx: idx }));
+    this.setState({ highlightedIdx: idx });
   }
 
   render() {
@@ -30,8 +30,6 @@ export class Gallery extends PureComponent {
                 src={imgSrc}
                 alt={imgSrc}
                 onMouseEnter={() => this.setHighlightedIdx(idx)}
-                // onMouseLeave={() => this.setHighlightedIdx(this.state.prevHighlightedIdx)}
-                // onClick={() => this.setHighlightedIdx(idx)}
               />
             </div>
           ))}

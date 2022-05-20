@@ -12,7 +12,7 @@ export const ERROR_FETCHING_PRODUCT_DETAILS = 'ERROR_FETCHING_PRODUCT_DETAILS';
 const getProduct = async (productId) => {
   const getByIdQuery = new Query('product', false)
     .addArgument('id', 'String!', productId)
-    .addFieldList(['id', 'name', 'gallery', 'brand', 'description'])
+    .addFieldList(['id', 'name', 'gallery', 'brand', 'description', 'inStock'])
     .addField(
       new Field('prices')
         .addField(new Field('currency').addFieldList(['label', 'symbol']))

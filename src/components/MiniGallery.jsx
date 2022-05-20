@@ -10,8 +10,6 @@ export class MiniGallery extends PureComponent {
       imgIdx: 0
     };
 
-    console.log(this.props.gallery);
-
     this.increaseImageIndex = this.increaseImageIndex.bind(this);
     this.decreaseImageIndex = this.decreaseImageIndex.bind(this);
   }
@@ -20,8 +18,6 @@ export class MiniGallery extends PureComponent {
     this.setState({
       imgIdx: (this.state.imgIdx + 1) % this.props.gallery.length
     });
-
-    console.log(this.state.imgIdx);
   }
 
   decreaseImageIndex(e) {

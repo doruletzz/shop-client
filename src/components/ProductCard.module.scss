@@ -4,11 +4,34 @@ a {
   text-decoration: none;
 }
 
+.not_in_stock:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(168, 172, 176, 0.19);
+  z-index: 999;
+}
+
 .card {
+  .not_in_stock_text {
+    position: absolute;
+
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    top: 35%;
+
+    text-align: center;
+  }
+
+  position: relative;
   padding: 1rem 1rem;
 
   .img {
-    width: 21rem;
+    width: 20.4rem;
     height: 21rem;
     object-fit: cover;
   }

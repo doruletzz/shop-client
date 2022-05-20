@@ -100,12 +100,6 @@ export class Product extends PureComponent {
                             isSelected={this.state.attributes[attribute.id] === item.id}
                           />
                         )
-
-                      // <button key={item.id}
-                      //     className={this.state.attributes[attribute.id] === item.id ? styles.selected : styles.default}
-                      //     onClick={() => this.setAttribute(attribute.id, item.id)}>
-                      //             {item.displayValue}
-                      // </button>
                     )}
               </div>
             ))}
@@ -116,9 +110,13 @@ export class Product extends PureComponent {
             {this.props.product.prices &&
               this.props.product.prices[this.props.currencyIndex].amount}
           </p>
-          <button onClick={() => this.addToCart()} className={styles.button}>
-            ADD TO CART
-          </button>
+          {this.props.product.inStock ? (
+            <button onClick={() => this.addToCart()} className={styles.button}>
+              ADD TO CART
+            </button>
+          ) : (
+            <p>not in stock :(</p>
+          )}
           <div
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: this.props.product.description }}
