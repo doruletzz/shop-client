@@ -115,7 +115,7 @@ export class Product extends PureComponent {
               ADD TO CART
             </button>
           ) : (
-            <p>not in stock :(</p>
+            <button className={styles.button}>OUT OF STOCK :(</button>
           )}
           <div
             className={styles.description}

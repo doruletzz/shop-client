@@ -17,12 +17,17 @@ a {
 
 .card {
   .not_in_stock_text {
+    font-family: theme.$primary-font-family;
+    font-weight: 500;
+    font-size: 24px;
+
+    color: theme.$primary-color;
     position: absolute;
 
     display: block;
     width: 100%;
     margin: 0 auto;
-    top: 35%;
+    top: 45%;
 
     text-align: center;
   }
