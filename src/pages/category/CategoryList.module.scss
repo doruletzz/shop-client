@@ -14,5 +14,27 @@
     margin-right: 1rem;
     margin-bottom: 2rem;
     align-self: flex-start;
+    position: relative;
+
+    .cart_button {
+      display: none;
+    }
+
+    &:hover .cart_button {
+      border: 0;
+      border-radius: 2rem;
+      padding: 1rem;
+      position: absolute;
+      display: block;
+      margin: 0 auto;
+      background-color: theme.$highlight-color;
+
+      cursor: pointer;
+
+      top: 70%;
+      right: 10%;
+
+      z-index: 2;
+    }
   }
 }

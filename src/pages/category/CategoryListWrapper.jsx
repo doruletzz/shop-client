@@ -2,8 +2,9 @@ import React from 'react';
 import CategoryList from './CategoryList';
 
 import { useParams } from 'react-router';
-import { fetchProducts } from '../../features/products/actions';
+import { fetchProductDetails, fetchProducts } from '../../features/products/actions';
 import { connect } from 'react-redux';
+import { addProductToCart } from '../../features/cart/actions';
 
 const mapStateToProps = (state, ownProps) => {
   const { category } = ownProps;
@@ -25,7 +26,9 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProducts: (category) => dispatch(fetchProducts(category))
+  fetchProducts: (category) => dispatch(fetchProducts(category)),
+  fetchProductDetails: (id) => dispatch(fetchProductDetails(id)),
+  addProductToCart: (product) => dispatch(addProductToCart(product))
 });
 
 const wrapper = connect(mapStateToProps, mapDispatchToProps);

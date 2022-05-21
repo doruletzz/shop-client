@@ -3,6 +3,7 @@ import ProductCard from '../../components/ProductCard';
 import { Link } from 'react-router-dom';
 
 import styles from './CategoryList.module.scss';
+import { fetchProductDetails } from '../../features/products/actions';
 
 export default class CategoryList extends PureComponent {
   componentDidMount() {
@@ -13,6 +14,11 @@ export default class CategoryList extends PureComponent {
     if (this.props.category !== prevProps.category) {
       this.props.fetchProducts(this.props.category);
     }
+  }
+
+  //TODO: implement buying default product
+  buyDefaultProduct(productId) {
+    alert(productId);
   }
 
   render() {
@@ -26,6 +32,13 @@ export default class CategoryList extends PureComponent {
         <div className={styles.container}>
           {this.props.products.map((product, idx) => (
             <div key={idx} className={styles.item}>
+              {product.inStock && (
+                <button
+                  className={styles.cart_button}
+                  onClick={() => this.buyDefaultProduct(product.id)}>
+                  🛒
+                </button>
+              )}
               <Link to={product.id}>
                 <ProductCard
                   imgUrl={product.gallery[0]}
