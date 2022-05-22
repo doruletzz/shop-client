@@ -3,7 +3,6 @@ import ProductCard from '../../components/ProductCard';
 import { Link } from 'react-router-dom';
 
 import styles from './CategoryList.module.scss';
-import { fetchProductDetails } from '../../features/products/actions';
 
 export default class CategoryList extends PureComponent {
   componentDidMount() {
@@ -11,14 +10,44 @@ export default class CategoryList extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
+    console.log('updated');
+
     if (this.props.category !== prevProps.category) {
       this.props.fetchProducts(this.props.category);
     }
+
+    if (this.props.productDetail !== prevProps.productDetail) {
+      this.buyDefaultProduct(this.props.productDetail);
+    }
   }
 
-  //TODO: implement buying default product
-  buyDefaultProduct(productId) {
-    alert(productId);
+  // componentDidUpdate(prevProps) {
+  //   if (this.props.category !== prevProps.category) {
+  //     this.props.fetchProducts(this.props.category);
+  //   }
+  // }
+
+  buyDefaultProduct(prodDetail) {
+    const attributes = prodDetail.attributes.map((attribute) => {
+      return { [attribute.id]: attribute.items[0].id };
+    });
+
+    const product = {
+      id: this.props.productDetail.id,
+      name: this.props.productDetail.name,
+      brand: this.props.productDetail.brand,
+      prices: this.props.productDetail.prices,
+      allAttributes: this.props.productDetail.attributes,
+      attributes: attributes,
+      gallery: this.props.productDetail.gallery,
+      amount: 1
+    };
+
+    this.props.addProductToCart(product);
+  }
+
+  fetchProductDetails(productId) {
+    this.props.fetchProductDetails(productId);
   }
 
   render() {
@@ -35,8 +64,12 @@ export default class CategoryList extends PureComponent {
               {product.inStock && (
                 <button
                   className={styles.cart_button}
-                  onClick={() => this.buyDefaultProduct(product.id)}>
-                  🛒
+                  onClick={() => this.fetchProductDetails(product.id)}>
+                  {this.props.isLoadinProductDetails ? (
+                    '...'
+                  ) : (
+                    <img alt="cart" src="/CartWhite.svg" />
+                  )}
                 </button>
               )}
               <Link to={product.id}>
@@ -48,10 +81,6 @@ export default class CategoryList extends PureComponent {
                   amount={product.prices[this.props.currencyIndex].amount}
                 />
               </Link>
-              {/* <img src={product.gallery[0]} width="200px" />
-                            <h1>{product.name}</h1>
-                            <h6>{!product.inStock && "not in stock :("}</h6>
-                        <p>{product.prices[0].currency.symbol}{product.prices[0].amount}</p> */}
             </div>
           ))}
         </div>

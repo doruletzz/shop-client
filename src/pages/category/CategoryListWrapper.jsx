@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   const { category } = ownProps;
   console.log(state);
   const {
-    products: { isFetching, items, error }
+    products: { isFetching, items, error },
+    productDetails: productDetail
   } = state.productsReducer;
   const {
     currency: { index }
@@ -18,8 +19,11 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     currencyIndex: index,
-    isLoading: isFetching,
+    isLoadingProducts: isFetching,
+    isLoadingProductDetails: productDetail.isFetching,
     error,
+    errorProductDetail: productDetail.error,
+    productDetail: productDetail.item,
     products: items,
     category: category
   };

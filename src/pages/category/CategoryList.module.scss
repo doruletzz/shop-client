@@ -22,8 +22,12 @@
 
     &:hover .cart_button {
       border: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+
+      padding-top: 0.2rem;
+      padding-right: 0.1rem;
       border-radius: 2rem;
-      padding: 1rem;
       position: absolute;
       display: block;
       margin: 0 auto;

@@ -40,7 +40,7 @@ export default class Navbar extends Component {
               </Link>
             </ul>
             <div className={styles.brand}>
-              <img src="/Logo.svg" />
+              <img alt="logo" src="/Logo.svg" />
             </div>
             <div className={styles.rhs}>
               <DropdownCurrencyWrapper />

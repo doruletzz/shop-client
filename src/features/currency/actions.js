@@ -1,4 +1,4 @@
-import { Query, Field, client } from '@tilework/opus';
+import { Query, client } from '@tilework/opus';
 
 import { SERVER_URL } from '../../utils/constants';
 
@@ -6,10 +6,7 @@ export const UPDATE_CURRENCY_INDEX = 'UPDATE_CURRENCY_INDEX';
 export const RECEIVE_CURRENCIES = 'RECEIVE_CURRENCIES';
 
 export const getCurrencies = async () => {
-  const getCurrenciesQuery = new Query('currencies', true).addFieldList([
-    'label',
-    'symbol',
-  ]);
+  const getCurrenciesQuery = new Query('currencies', true).addFieldList(['label', 'symbol']);
 
   client.setEndpoint(SERVER_URL);
 
@@ -24,7 +21,7 @@ export const fetchCurrencies = () => {
     getCurrencies().then((result) => {
       dispatch({
         type: RECEIVE_CURRENCIES,
-        currencies: result,
+        currencies: result
       });
     });
   };
@@ -33,6 +30,6 @@ export const fetchCurrencies = () => {
 export const updateCurrencyIndex = (newIndex) => {
   return {
     type: UPDATE_CURRENCY_INDEX,
-    newIndex: newIndex,
+    newIndex: newIndex
   };
 };

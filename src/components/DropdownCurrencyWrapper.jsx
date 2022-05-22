@@ -9,8 +9,6 @@ const mapStateToProps = (state, _) => {
     currency: { index, currencies }
   } = state.currencyReducer;
 
-  console.log(currencies);
-
   return {
     index: index,
     currencies: currencies

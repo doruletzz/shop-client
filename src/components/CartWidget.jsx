@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Cart from '../pages/cart/Cart';
+import { Link } from 'react-router-dom';
 import BagWrapper from './BagWrapper';
 
 import styles from './CartWidget.module.scss';
@@ -40,7 +39,7 @@ export class CartWidget extends PureComponent {
             {this.props.quantity > 0 && !this.state.isHovered && (
               <div className={styles.quantity}>{this.props.quantity}</div>
             )}
-            <img className={styles.icon} src="/Cart.svg" />
+            <img alt="cart" className={styles.icon} src="/Cart.svg" />
           </Link>
 
           {this.state.isHovered && (

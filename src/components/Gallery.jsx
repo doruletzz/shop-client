@@ -28,14 +28,20 @@ export class Gallery extends PureComponent {
               <img
                 className={styles.image}
                 src={imgSrc}
-                alt={imgSrc}
+                alt="gallery"
                 onMouseEnter={() => this.setHighlightedIdx(idx)}
               />
             </div>
           ))}
         </div>
         <div className={styles.main}>
-          {<img className={styles.image} src={this.props.gallery[this.state.highlightedIdx]} />}
+          {
+            <img
+              alt="gallery-main"
+              className={styles.image}
+              src={this.props.gallery[this.state.highlightedIdx]}
+            />
+          }
         </div>
       </div>
     );
