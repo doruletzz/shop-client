@@ -28,9 +28,11 @@ export default class CategoryList extends PureComponent {
   // }
 
   buyDefaultProduct(prodDetail) {
-    const attributes = prodDetail.attributes.map((attribute) => {
-      return { [attribute.id]: attribute.items[0].id };
-    });
+    let attributes = {};
+
+    prodDetail.attributes.forEach(
+      (attribute) => (attributes[attribute.id] = attribute.items[0].id)
+    );
 
     const product = {
       id: this.props.productDetail.id,

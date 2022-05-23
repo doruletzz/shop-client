@@ -18,15 +18,11 @@ export class Product extends PureComponent {
   }
 
   setAttribute(attributeId, itemId) {
-    //TODO change to setState
-    // this.state.attributes[attributeId] = itemId;
-
     this.setState((prevState) => {
       let attributes = { ...prevState.attributes };
       attributes[attributeId] = itemId;
       return { attributes };
     });
-    // console.log(this.state.attributes);
 
     console.log(this.state.attributes[attributeId]);
   }

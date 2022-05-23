@@ -3,18 +3,18 @@ import { combineReducers } from 'redux';
 
 const initialCurrencyIndexState = {
   index: 0,
-  currencies: [],
+  currencies: []
 };
 
 export const currencyIndex = (state = initialCurrencyIndexState, action) => {
   switch (action.type) {
     case UPDATE_CURRENCY_INDEX:
       return Object.assign({}, state, {
-        index: action.newIndex,
+        index: action.newIndex
       });
     case RECEIVE_CURRENCIES:
       return Object.assign({}, state, {
-        currencies: action.currencies,
+        currencies: action.currencies
       });
     default:
       return state;
@@ -22,5 +22,5 @@ export const currencyIndex = (state = initialCurrencyIndexState, action) => {
 };
 
 export default combineReducers({
-  currency: currencyIndex,
+  currency: currencyIndex
 });
